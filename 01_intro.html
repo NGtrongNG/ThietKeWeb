@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 - Intro</title>
+    <link rel="shortcut icon" href="favico.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td,th{
+            border: solid 1px green;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Cac the HTML</h1>
+    </section>
+    <ol type="I">
+        <li>
+            <h2>Cac the the hien van ban (Text)</h2>
+            <ul type="square">
+                <li>h1&rarr;h6: The heading (de muc)</li>
+                <li>The &lt;p&gt;: Doan van ban</li>
+                <li>The span (<span>Chuoi</span>), em (<em>nhan manh</em>), b (<b>in dam</b>), abbr (Viet tat <abbr title="Lu Cao Tien">lct</abbr>)</li>
+                <li>&lt;br/&gt; (xuong dong)</br><br><br/>
+                    &lt;hr/&gt; (Gach ngang) <hr>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h2>Cac the the hien danh sach</h2>
+            <!-- Tao the table gom 5 the tr trong do the tr dau tien gom 3 the th, cac the tr con lai gom 3 the td -->
+            <!-- table>((tr>th*3)+(tr>td*3)*4) -->
+            <table>
+                <tr>
+                    <th>Thẻ</th>
+                    <th>Mô tả</th>
+                    <th>Thuộc tính</th>
+                </tr>
+                <tr>
+                    <td>ul>li</td>
+                    <td>Danh sách không có thứ tự</td>
+                    <td>type: loại bullet</td>
+                </tr>
+                <tr>
+                    <td>ol>li</td>
+                    <td>Danh sách có thứ tự</td>
+                    <td>type: cách đánh số thứ tự</td>
+                </tr>
+                <tr>
+                    <td>dl>dt</td>
+                    <td>Danh sách mô tả</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>table>tr>td hoặc th</td>
+                    <td>Danh sách bảng</td>
+                    <td></td>
+                </tr>
+            </table>
+        </li>
+        <li>
+            <h2>Các thẻ liên kết</h2>
+            <h3>Đường dẫn tuyệt đối</h3>
+            <p>Là đường dẫn tính từ thư mục ổ đĩa gốc trong máy tính, không nên sử dụng đường dẫn này để liên kết vì dễ xảy ra lỗi liên kết khi di chuyển các tập tin, thư mục trong website</p>
+            <h3>Đường dẫn tương đối (Cùng miền)</h3>
+            <p>Là đường dẫn được xét từ vị trí tương đối của tập tin đang thao tác so với vị trí tập tin muốn liên kết. Có thể kết hợp với các dấu . thể hiện thư mục gốc, dấu .. thể hiện thư mục cha trước đó. Đường dẫn này thường xuyên được sử dụng, tuy nhiên các tập tin được liên kết cần nằm trong cùng miền website, tốn dung lượng và băng thông của website</p>
+            <h3>Đường dẫn với http hay https (khác miền)</h3> Sử dụng để liên kết đến các tài nguyên nằm ngoài website, được đặt trên các máy chủ các website, hệ thống khác, không gây tốn băng thông, dung lượng lưu trữ cho website hiện hành.
+            <ol type="1">
+                <li><h4>Thẻ img</h4>
+                    <!-- Tạo table có 4 dòng 3 cột, cột đầu là tiêu đề-->
+                    <!-- table>((tr>th*3)+(tr>td*3)*3) -->
+                    <table>
+                        <tr>
+                            <th>STT</th>
+                            <th>Thuộc tính</th>
+                            <th>Ý nghĩa</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>alt</td>
+                            <td>Phần nội dung chữ hiển thị khi không có hình ảnh</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>title</td>
+                            <td>Tên hình</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>src</td>
+                            <td>Đường dẫn hình (tương đối, <strike>tuyệt đối</strike>, url) hoặc chuỗi base64</td>
+                        </tr>
+                    </table>
+                    <img src="favico.png" alt="Day la hinh icon" title="icon c#">
+                </li>
+                <li>
+                    <h4>Thẻ a</h4>
+                    <table>
+                        <tr>
+                            <th>STT</th>
+                            <th>Thuộc tính</th>
+                            <th>Ý nghĩa</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>href</td>
+                            <td>Đường dẫn nội dung liên kết <br>
+                            <ul type="disc">
+                                <li>Đường dẫn tương đối</li>
+                                <li><strike>Đường dẫn tuyệt đối</strike></li>
+                                <li>URL</li>
+                                <li>tel:Số_điện_thoại</li>
+                                <li>mailto:địa_chỉ_email</li>
+                                <li>javascript:mã_code_js</li>
+                                <li>#id_phần_nội_dung_liên_kết</li>
+                            </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>target</td>
+                            <td>Cách hiển thị nội dung khi click<br>
+                            <ul type="disc">
+                                <li>_blank</li>
+                                <li>_self</li>
+                            </ul>
+                            </td>
+                        </tr>
+                    </table>
+                    <a href="https://gg.com.vn" target="_self">Google</a>
+                </li>
+                <li><h4>Các thẻ khác</h4>
+                    <table>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên thẻ</th>
+                            <th>Ý nghĩa</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>audio</td>
+                            <td>Liên kết âm thanh</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>video</td>
+                            <td>Liên kết video</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>iframe</td>
+                            <td>Liên kết 1 phần trang web bên ngoài (youtube)</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>link</td>
+                            <td>icon cho trang, css</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>script</td>
+                            <td>tập tin javascript</td>
+                        </tr>
+                    </table>
+                </li>
+            </ol>
+        </li>
+        <li>
+            <h2>Cac the the hien layout</h2>
+            <table>
+                <tr>
+                    <th>STT</th>
+                    <th>Tên thẻ</th>
+                    <th>Ý nghĩa</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>header</td>
+                    <td>Phần nội dung đầu của tài liệu thường chứa topmenu, banner, menu,...</td>                    
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>footer</td>
+                    <td>Phần nội dung cuối của tài liệu thường chứa menu phụ thông tin đơn vị kinh doanh, thông tin bản quyền website, liên kết mạng xã hội,...</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>main</td>
+                    <td>Phần nội dung chính của trang (một website có nhiều trang, mỗi trang có phần giao diện chung như header, footer menu, nhưng có phần nội dung chỉ riêng cho trang đó chứa trong main)</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>nav</td>
+                    <td>Phần nội dung chứa các liên kết điều hướng trang, thường la menu, chứa trogn sidebar</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>section</td>
+                    <td>Phần nội dung có ý nghĩa riêng biệt như caurosel, danh sách sản phẩm mới, danh sách bài viết xem nhiều, ...</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>aside</td>
+                    <td>Phần nội dung bên cạnh một nội dung riêng biệt khác (section, main) thường là sidebar</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>article</td>
+                    <td>Phần nội dung chuyên biệt như 1 bài viết, 1 sản phẩm</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Summary - detail</td>
+                    <td>Phần đầu và nội dung chi tiết bị collapse (thu lại)</td>
+                </tr>
+            </table>
+        </li>
+        <li>
+            <h2>Cac the tạo form</h2>
+            <table>
+                <tr>
+                    <th>STT</th>
+                    <th>Tên thẻ</th>
+                    <th>Thuộc tính</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>form</td>
+                    <td>
+                        &lt;form method="GET" action="#" enctype="multipart/form-data"&gt;
+                        &lt;/form&gt;
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>select</td>
+                    <td>
+                        <code>
+                        &lt;select name="ddl" multiple&gt;<br>
+                        &nbsp;&nbsp;&lt;option value="1"&gt;Lựa chọn 1 &lt;/option&gt;<br>
+                        &nbsp;&nbsp;&lt;option value="2"&gt;Lựa chọn 2 &lt;/option&gt;<br>
+                        &nbsp;&nbsp;&lt;option value="3"&gt;Lựa chọn 3 &lt;/option&gt;<br>
+                        &lt;/select&gt;
+                        </code><br>
+                        <select name="ddl">
+                            <optgroup label="Nhóm lựa chọn 1">
+                                <option value="1">Lựa chọn 1</option>
+                                <option value="2">Lựa chọn 2</option>
+                                <option value="3">Lựa chọn 3</option>
+                            </optgroup>
+                            <optgroup label="Nhóm lựa chọn 2">
+                                <option value="4">Lựa chọn 4</option>
+                                <option value="5">Lựa chọn 5</option>
+                                <option value="6">Lựa chọn 6</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>input</td>
+                    <td>
+                        &lt;input name="..." type="..." required pattern="..." min="..." max="..." maxlength="..." minlength="..." value="..." placeholder="..."&gt;
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>button</td>
+                    <td>
+                        &lt;button type="..."&gt;
+                        &lt;/button&gt;
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>textarea</td>
+                    <td>
+                        &lt;textarea cols="..."&gt;
+                        &lt;/textarea&gt;
+                        <textarea name="xxx" id="" cols="30" rows="3"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <li>
+            <h2>Cac the khác</h2>
+            meta, style, head, html, figure
+        </li>
+    </ol>
+    <!-- <input type="date"> -->
+    <li><h1>CSS</h1>
+        <span>selecter+property+value</span>
+        <h2>inline css- thuộc tính style của thẻ html </h2>
+        <p>định dạng cho thẻ chứa thuộc tính style và các thành phần nằm trong thẻ nếu thuộc tính css có tính kế thừa (phông chữ, màu chữ,...)</p>
+        &lt;p style="color: green; "&gt;chu mau &lt;span style="text-transform: uppercase; font-weight: bolder;"&gt;xanh&lt;/span&gt;&lt;/p&gt;
+        <p style="color: green; ">chu mau <span style="text-transform: uppercase; font-weight: bolder;">xanh</span></p>
+        <p style="color: red; font-weight: bolder;">tôi rất <span style="text-transform: uppercase; font-size: x-large; font-style: oblique ; text-decoration: underline;">lười</span></p>
+    </li>
+    <li>
+        <h1>Thẻ style (internal CSS)-thường đặt trong thẻ head</h1>
+        <p>Định dang cho một tập tin HTML</p>
+    </li>
+</body>
+</html>
